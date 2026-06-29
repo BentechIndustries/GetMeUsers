@@ -4,7 +4,11 @@ import { SOLUTION } from "@/lib/constants";
 export function Solution() {
   return (
     <Section>
-      <SectionHeader title={SOLUTION.title} />
+      <SectionHeader title={SOLUTION.title} className="mb-4 md:mb-5" />
+
+      <p className="mb-10 text-xl font-medium leading-snug text-slate-900 md:mb-12 md:text-2xl">
+        {SOLUTION.intro}
+      </p>
 
       <div className="grid gap-5 sm:grid-cols-2">
         {SOLUTION.items.map((item) => (
@@ -20,7 +24,7 @@ export function Solution() {
         ))}
       </div>
 
-      <p className="mt-10 max-w-3xl text-2xl font-medium leading-snug text-slate-900 md:text-3xl">
+      <p className="mt-10 text-xl font-medium leading-snug text-slate-900 md:text-2xl">
         {SOLUTION.closing}
       </p>
     </Section>

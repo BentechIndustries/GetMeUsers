@@ -4,6 +4,9 @@ import { PROOF } from "@/lib/constants";
 
 const flow = PROOF.flows[0];
 
+const stepCardHover =
+  "relative transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.04] hover:shadow-md";
+
 export function Proof() {
   return (
     <Section id="proof" className="bg-slate-50">
@@ -29,7 +32,9 @@ export function Proof() {
 
             return (
               <Fragment key={stage.label}>
-                <div className={`flex-1 rounded-2xl border p-5 ${style.card}`}>
+                <div
+                  className={`flex-1 rounded-2xl border p-5 ${stepCardHover} ${style.card}`}
+                >
                   <span
                     className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ring-1 ${style.badge}`}
                   >
@@ -44,7 +49,9 @@ export function Proof() {
             );
           })}
 
-          <div className="flex-1 rounded-2xl border border-indigo-300 bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 p-5">
+          <div
+            className={`flex-1 rounded-2xl border border-indigo-300 bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 p-5 ${stepCardHover}`}
+          >
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">
               ✓
             </span>

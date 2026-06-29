@@ -16,9 +16,17 @@ export const HERO = {
   headline: "You shipped.",
   subheadline: "Now what?",
   descriptor: "Let's get you users.",
-  primaryCta: "Book a growth call",
+  primaryCta: "Book your free growth call",
   secondaryCta: "See how it works",
   note: "15 minutes. Just bring your app link.",
+} as const;
+
+export const LAUNCH_OFFER = {
+  badge: "Limited time",
+  lead:
+    "To celebrate the launch of GetMeUsers, we are offering a limited-time early adopters sale with discounts up to 50%.",
+  cta: "Book your call now",
+  tail: " to qualify.",
 } as const;
 
 export const PROBLEM = {
@@ -44,6 +52,8 @@ export const FOUNDER = {
 
 export const SOLUTION = {
   title: "Everything you need",
+  intro:
+    "After your call, we'll get straight to work on getting you all you need to get users.",
   items: [
     {
       title: "Launch strategy",
@@ -58,7 +68,7 @@ export const SOLUTION = {
       description: "We'll find what fits your product based on what works in the current environment.",
     },
     {
-      title: "Landing page optimisation",
+      title: "Landing page optimization",
       description: "Your page should convert the traffic we send. We fix that too.",
     },
     {
@@ -66,7 +76,7 @@ export const SOLUTION = {
       description: "Accounts, posts, ads, and tracking configured so growth does not stop when we hand off.",
     },
     {
-      title: "Launch week execution",
+      title: "Launch execution",
       description: "We run the launch with you, not hand you a PDF and disappear.",
     },
   ],
@@ -92,13 +102,13 @@ export const STEPS = {
   items: [
     {
       step: "01",
-      title: "Audit your product",
+      title: "Product audit",
       description:
-        "We review your app, existing audience (none is fine), and current traction to find the fastest path to users.",
+        "We get on a call with you, review your app, existing audience (none is fine), and current traction to find the fastest path to users.",
     },
     {
       step: "02",
-      title: "Build acquisition strategy",
+      title: "Acquisition strategy",
       description:
         "A tailored plan covering channels, messaging, and launch timing.",
     },
@@ -225,9 +235,9 @@ export const CTA_BAND = {
 } as const;
 
 export const CTA_BAND_SECONDARY = {
-  headline: "Let's build your acquisition system.",
-  subheadline: "Tell us what you shipped and we'll map the path to users.",
-  cta: "Book your free call",
+  headline: "You shipped. Now find the users.",
+  subheadline: "15 minutes to spot the bottleneck and your next move.",
+  cta: "Book your call now",
 } as const;
 
 export const FINAL_CTA = {
