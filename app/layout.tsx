@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "GetMeUsers | Get Your First 1,000 Users",
   description:
-    "You built the product. We bring the users. Launch strategy and user acquisition for AI app founders.",
+    "You built the app. We bring the users. Launch strategy and user acquisition for solo developers building with AI.",
   openGraph: {
     title: "GetMeUsers",
     description: "Get Your First 1,000 Users.",

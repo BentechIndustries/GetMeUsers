@@ -5,6 +5,7 @@ type SectionProps = {
   children: ReactNode;
   className?: string;
   containerClassName?: string;
+  py?: string;
 };
 
 export function Section({
@@ -12,9 +13,10 @@ export function Section({
   children,
   className = "",
   containerClassName = "",
+  py = "py-20 md:py-24",
 }: SectionProps) {
   return (
-    <section id={id} className={`py-20 md:py-24 ${className}`}>
+    <section id={id} className={`${py} ${className}`}>
       <div
         className={`mx-auto max-w-5xl px-6 md:px-8 ${containerClassName}`}
       >
@@ -34,7 +36,7 @@ export function SectionHeader({
   className?: string;
 }) {
   return (
-    <div className={`mb-12 md:mb-16 ${className}`}>
+    <div className={`mb-12 md:mb-14 ${className}`}>
       <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
         {title}
       </h2>

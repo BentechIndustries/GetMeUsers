@@ -4,59 +4,80 @@ export const CALENDLY_URL =
 
 export const SITE = {
   name: "GetMeUsers",
-  tagline: "You built the product. We bring the users.",
+  tagline: "You built the app. We bring the users.",
 } as const;
 
 export const NAV_LINKS = [
   { label: "How it works", href: "#how-it-works" },
-  { label: "Proof", href: "#proof" },
-  { label: "Offer", href: "#offer" },
+  { label: "Example", href: "#proof" },
 ] as const;
 
 export const HERO = {
-  headline: "Get Your First 1,000 Users",
-  subheadline: SITE.tagline,
+  headline: "You shipped.",
+  subheadline: "Now what?",
+  descriptor: "Let's get you users.",
   primaryCta: "Book a growth call",
   secondaryCta: "See how it works",
+  note: "15 minutes. Just bring your app link.",
 } as const;
 
 export const PROBLEM = {
   titleLine1: "Building is easy.",
   titleLine2: "Distribution isn't.",
-  points: [
-    "AI tools let you ship in days with Lovable, Replit, Cursor, and Bolt. But a finished product with zero users is still a failed launch.",
-    "Most indie apps die not because the idea was bad, but because nobody ever heard about them.",
+  narrative: [
+    "You shipped in a weekend.",
+    "Two weeks later, the analytics dashboard is still flat.",
+    "The product works. Nobody knows it exists.",
+    "That's where most apps die.",
+    "Now is the time to make sure you're not most apps.",
   ],
+  emphasis: "That's where most apps die.",
+} as const;
+
+export const FOUNDER = {
+  initials: "BT",
+  name: "Ben",
+  role: "Founder",
+  statement:
+    "I've launched products fast and watched them sit at zero users. GetMeUsers is the distribution work I do for founders who are great at building and stuck on the part that comes after.",
 } as const;
 
 export const SOLUTION = {
-  title: "User acquisition built for AI-built apps",
-  description:
-    "GetMeUsers helps founders who move fast go from launch to traction with positioning, channels, and execution tailored to products built with AI.",
+  title: "Everything you need",
   items: [
     {
-      title: "Positioning for AI-built apps",
-      description: "Stand out in a crowded market with messaging that resonates.",
+      title: "Launch strategy",
+      description: "A concrete, practical step-by-step roadmap to getting your first 1,000 users.",
     },
     {
-      title: "Launch strategy",
-      description: "A clear plan for day-one visibility and momentum.",
+      title: "Position optimization",
+      description: "Messaging that separates you from the hundred other tools launching this week.",
     },
     {
       title: "Paid + organic acquisition",
-      description: "Reddit, X, communities, and targeted ads. Whatever fits your product.",
+      description: "We'll find what fits your product based on what works in the current environment.",
     },
     {
       title: "Landing page optimisation",
-      description: "Turn visitors into signups with a page built to convert.",
+      description: "Your page should convert the traffic we send. We fix that too.",
+    },
+    {
+      title: "Channel setup",
+      description: "Accounts, posts, ads, and tracking configured so growth does not stop when we hand off.",
+    },
+    {
+      title: "Launch week execution",
+      description: "We run the launch with you, not hand you a PDF and disappear.",
     },
   ],
+  closing:
+    "Our goal is to get you to a place where you're getting compounding signups, organically.",
 } as const;
 
 export const AUDIENCE = {
   title: "Built for builders like you",
   subtitle:
-    "Whether you vibe-coded it in Lovable or shipped with Cursor, if you need users, you're in the right place.",
+    "Whether you vibe-coded it in Lovable or shipped with Cursor, if you need users, you are in the right place.",
   groups: [
     "App founders",
     "Indie hackers",
@@ -91,32 +112,127 @@ export const STEPS = {
 } as const;
 
 export const PROOF = {
-  title: "Results from the field",
-  subtitle: "Real results from recent launches.",
-  cases: [
+  title: "Example",
+  subtitle: "How an acquisition system gets built around the product.",
+  flows: [
     {
-      title: "Case study 1",
-      result: "+1,200 users in 21 days",
-      description: "Launched an AI productivity tool with targeted community outreach.",
+      product: "Habit tracker",
+      audience: "Consumer app",
+      insight: "Nobody needs another habit app. They need a reason to stick with one, so we anchor it to a specific identity.",
+      stages: [
+        {
+          label: "Niche down",
+          detail: "Target one identity-driven group (gym, study, sobriety) instead of everyone who wants habits.",
+        },
+        {
+          label: "Build the hook",
+          detail: "Short-form video showing the streak mechanic and a real before and after.",
+        },
+        {
+          label: "Seed channels",
+          detail: "Reddit communities like r/getdisciplined, TikTok and Shorts, niche Discords.",
+        },
+        {
+          label: "Remove friction",
+          detail: "Instant free start, no signup wall, streak sharing built into the product.",
+        },
+      ],
+      loop: "Every shared streak becomes social proof that recruits the next user.",
+      outcome: "Compounding organic signups",
     },
     {
-      title: "Case study 2",
-      result: "300 users from Reddit + X",
-      description: "Organic growth through founder-led content and community engagement.",
+      product: "Developer SaaS",
+      audience: "Technical buyer",
+      insight: "Developers distrust marketing. They adopt tools through proof, peers, and search, not pitches.",
+      stages: [
+        {
+          label: "Sharpen the use case",
+          detail: "State the exact problem and the stack it fits in a single sentence.",
+        },
+        {
+          label: "Show, don't pitch",
+          detail: "Technical writeups, a live demo, and a Show HN over polished ad copy.",
+        },
+        {
+          label: "Go where devs are",
+          detail: "Reddit dev subs, build-in-public on X, dev.to posts, and SEO-friendly docs.",
+        },
+        {
+          label: "Free tier as funnel",
+          detail: "Docs to free tier to paid, with usage that proves the value fast.",
+        },
+      ],
+      loop: "Search-friendly content and word of mouth keep returning qualified traffic.",
+      outcome: "Qualified, durable traffic",
     },
   ],
 } as const;
 
 export const OFFER = {
-  title: "Growth Sprint",
+  title: "Growth Blueprint",
   price: "$___",
-  description: "Everything you need to go from zero to your first wave of users.",
-  includes: ["Strategy", "Launch plan", "Acquisition setup"],
+  description: "From zero traction to a launch that actually brings users in the door.",
+  includes: [
+    "Positioning + messaging",
+    "Launch plan",
+    "Channel setup",
+    "Landing page review",
+    "Launch week support",
+  ],
   cta: "Book a growth call",
+} as const;
+
+export const FAQ = {
+  title: "FAQs",
+  items: [
+    {
+      question: "I have no users yet. Is that too early?",
+      answer:
+        "That is exactly when this works best. We are built for the gap between shipped and first traction.",
+    },
+    {
+      question: "I already tried posting on Reddit and got nothing.",
+      answer:
+        "Most founders post in the wrong subreddits with the wrong framing. Channel selection and positioning matter more than volume.",
+    },
+    {
+      question: "What if my app is not ready?",
+      answer:
+        "Book the call anyway. We will tell you honestly if you should launch now or fix the product first.",
+    },
+    {
+      question: "How is this different from a marketing agency?",
+      answer:
+        "Agencies send decks. We run the launch with you, tuned for indie budgets and solo developer products.",
+    },
+    {
+      question: "What does the call cover?",
+      answer:
+        "All we need is for you to explain what you've built (be proud!) and we'll start working on a plan right away. By the end of the 15 minutes you'll have a clear idea of what your next step should be.",
+    },
+    {
+      question: "Do you create content and ads?",
+      answer:
+        "Yes! We specialize in making coherent, consistent content that converts.",
+    },
+  ],
+} as const;
+
+export const CTA_BAND = {
+  headline: "Ready to get users?",
+  subheadline: "Just one quick chat away.",
+  cta: "Book your free call",
+} as const;
+
+export const CTA_BAND_SECONDARY = {
+  headline: "Let's build your acquisition system.",
+  subheadline: "Tell us what you shipped and we'll map the path to users.",
+  cta: "Book your free call",
 } as const;
 
 export const FINAL_CTA = {
   headline: "Ready to get your first users?",
-  subheadline: "Book a free 15-minute call. No pitch deck required.",
+  subheadline: "Book a free 15-minute call. No commitment.",
   cta: "Book a growth call",
+  ps: "P.S. If you shipped something real and the user count is still below 100, or even stuck at zero, this call is for you.",
 } as const;

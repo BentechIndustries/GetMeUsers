@@ -3,7 +3,7 @@ import { PROBLEM } from "@/lib/constants";
 
 export function Problem() {
   return (
-    <Section className="bg-slate-50">
+    <Section className="bg-slate-50" py="pt-20 pb-10 md:pt-24 md:pb-12">
       <SectionHeader
         title={
           <>
@@ -14,19 +14,16 @@ export function Problem() {
         }
       />
 
-      <ul className="space-y-6">
-        {PROBLEM.points.map((point) => (
-          <li
-            key={point}
-            className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+      <div className="max-w-3xl space-y-4 text-xl leading-snug text-slate-700 md:text-2xl md:leading-snug">
+        {PROBLEM.narrative.map((line) => (
+          <p
+            key={line}
+            className={line === PROBLEM.emphasis ? "font-bold text-slate-900" : ""}
           >
-            <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600">
-              !
-            </span>
-            <p className="text-lg leading-relaxed text-slate-700">{point}</p>
-          </li>
+            {line}
+          </p>
         ))}
-      </ul>
+      </div>
     </Section>
   );
 }

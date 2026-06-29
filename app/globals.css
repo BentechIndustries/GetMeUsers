@@ -22,15 +22,14 @@ body {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
-.gradient-hero {
+.hero-glow {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 0%, rgba(139, 92, 246, 0.08), transparent),
+    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(99, 102, 241, 0.14), transparent),
     #ffffff;
 }
 
-.gradient-cta {
+.cta-glow {
   background:
-    radial-gradient(ellipse 70% 60% at 50% 100%, rgba(99, 102, 241, 0.1), transparent),
-    linear-gradient(to bottom, #f8fafc, #ffffff);
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(99, 102, 241, 0.08), transparent),
+    #f8fafc;
 }

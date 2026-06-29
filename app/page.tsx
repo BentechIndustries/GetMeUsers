@@ -1,12 +1,13 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Problem } from "@/components/Problem";
-import { Solution } from "@/components/Solution";
-import { WhoItsFor } from "@/components/WhoItsFor";
 import { HowItWorks } from "@/components/HowItWorks";
+import { CtaBand } from "@/components/CtaBand";
+import { Solution } from "@/components/Solution";
 import { Proof } from "@/components/Proof";
-import { Offer } from "@/components/Offer";
+import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
+import { CTA_BAND_SECONDARY } from "@/lib/constants";
 
 export default function Home() {
   return (
@@ -15,11 +16,12 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
-        <Solution />
-        <WhoItsFor />
         <HowItWorks />
+        <CtaBand />
+        <Solution />
         <Proof />
-        <Offer />
+        <CtaBand content={CTA_BAND_SECONDARY} />
+        <Faq />
         <FinalCta />
       </main>
     </>
