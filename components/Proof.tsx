@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Section, SectionHeader } from "@/components/ui/Section";
+import { BeforeAfterVisual } from "@/components/BeforeAfterVisual";
 import { PROOF } from "@/lib/constants";
 
 const flow = PROOF.flows[0];
@@ -7,10 +8,18 @@ const flow = PROOF.flows[0];
 const stepCardHover =
   "relative transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.04] hover:shadow-md";
 
+const stepCardBase = `w-[7.5rem] rounded-2xl border px-3 py-5 sm:w-[8.25rem] sm:py-6 ${stepCardHover}`;
+
+const stepTitleClass = "mt-3 text-sm font-semibold leading-snug";
+
 export function Proof() {
   return (
     <Section id="proof" className="bg-slate-50">
       <SectionHeader title={PROOF.title} subtitle={PROOF.subtitle} />
+
+      <div className="mb-8 flex justify-center md:mb-10">
+        <BeforeAfterVisual />
+      </div>
 
       <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
         <div className="flex items-center gap-3">
@@ -26,21 +35,19 @@ export function Proof() {
           {flow.insight}
         </p>
 
-        <div className="mt-8 flex flex-col gap-3 lg:flex-row lg:items-stretch">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-1 gap-y-4">
           {flow.stages.map((stage, index) => {
             const style = getStageStyle(index, flow.stages.length);
 
             return (
               <Fragment key={stage.label}>
-                <div
-                  className={`flex-1 rounded-2xl border p-5 ${stepCardHover} ${style.card}`}
-                >
+                <div className={`${stepCardBase} ${style.card}`}>
                   <span
                     className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ring-1 ${style.badge}`}
                   >
                     {index + 1}
                   </span>
-                  <h3 className={`mt-3 font-semibold ${style.title}`}>
+                  <h3 className={`${stepTitleClass} ${style.title}`}>
                     {stage.label}
                   </h3>
                 </div>
@@ -50,12 +57,12 @@ export function Proof() {
           })}
 
           <div
-            className={`flex-1 rounded-2xl border border-indigo-300 bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200 p-5 ${stepCardHover}`}
+            className={`${stepCardBase} border-indigo-300 bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200`}
           >
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">
               ✓
             </span>
-            <h3 className="mt-3 font-semibold text-indigo-900">
+            <h3 className={`${stepTitleClass} text-indigo-900`}>
               {flow.outcome}
             </h3>
           </div>
@@ -101,12 +108,8 @@ function getStageStyle(index: number, total: number) {
 
 function Connector() {
   return (
-    <div
-      aria-hidden
-      className="flex items-center justify-center text-slate-300 lg:flex-col"
-    >
-      <span className="lg:hidden">↓</span>
-      <span className="hidden text-lg lg:inline">→</span>
+    <div aria-hidden className="flex shrink-0 items-center justify-center px-0.5 text-slate-500">
+      <span className="text-base">→</span>
     </div>
   );
 }

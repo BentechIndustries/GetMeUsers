@@ -1,4 +1,5 @@
 import { Section, SectionHeader } from "@/components/ui/Section";
+import { SolutionVisual } from "@/components/SolutionVisual";
 import { SOLUTION } from "@/lib/constants";
 
 export function Solution() {
@@ -6,9 +7,15 @@ export function Solution() {
     <Section>
       <SectionHeader title={SOLUTION.title} className="mb-4 md:mb-5" />
 
-      <p className="mb-10 text-xl font-medium leading-snug text-slate-900 md:mb-12 md:text-2xl">
-        {SOLUTION.intro}
-      </p>
+      <div className="mb-10 grid items-center gap-8 md:mb-12 md:grid-cols-2 md:gap-12">
+        <p className="text-xl font-medium leading-snug text-slate-900 md:text-2xl">
+          {SOLUTION.intro}
+        </p>
+
+        <div className="flex justify-center md:justify-end">
+          <SolutionVisual />
+        </div>
+      </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         {SOLUTION.items.map((item) => (
