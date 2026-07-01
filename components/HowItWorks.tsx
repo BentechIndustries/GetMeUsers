@@ -1,30 +1,36 @@
 import { Section, SectionHeader } from "@/components/ui/Section";
-import { HowItWorksVisual } from "@/components/HowItWorksVisual";
 import { STEPS } from "@/lib/constants";
 
 export function HowItWorks() {
   return (
-    <Section id="how-it-works" className="bg-slate-50" py="pt-10 pb-20 md:pt-12 md:pb-24">
-      <SectionHeader title={STEPS.title} />
+    <Section id="how-it-works">
+      <SectionHeader eyebrow="02 / How it works" title={STEPS.title} />
 
-      <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto] lg:gap-12">
-        <div className="grid gap-8 md:grid-cols-3">
-          {STEPS.items.map((item) => (
-            <div key={item.step}>
-              <span className="text-4xl font-bold text-indigo-200">{item.step}</span>
-              <h3 className="mt-3 text-lg font-semibold text-slate-900">
+      <div className="mt-14 border-t border-ink/12">
+        {STEPS.items.map((item, index) => (
+          <div
+            key={item.step}
+            className="grid grid-cols-1 gap-4 border-b border-ink/12 py-8 md:grid-cols-12 md:items-baseline md:gap-8 md:py-10"
+          >
+            <div className="flex items-baseline gap-4 md:col-span-4">
+              <span className="font-display text-5xl leading-none text-accent md:text-6xl">
+                {item.step}
+              </span>
+              <h3 className="font-display text-2xl leading-tight text-ink md:text-3xl">
                 {item.title}
               </h3>
-              <p className="mt-2 leading-relaxed text-slate-600">
-                {item.description}
-              </p>
             </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center lg:justify-end">
-          <HowItWorksVisual />
-        </div>
+            <p className="max-w-xl text-lg leading-relaxed text-ink-soft md:col-span-7 md:col-start-6">
+              {item.description}
+            </p>
+            <span
+              aria-hidden
+              className="hidden text-right text-sm text-ink-soft md:col-span-1 md:block"
+            >
+              {index < STEPS.items.length - 1 ? "\u2193" : "\u25A0"}
+            </span>
+          </div>
+        ))}
       </div>
     </Section>
   );

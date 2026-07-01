@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { type ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "ghost";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "invert";
 
 type ButtonProps = {
   children: ReactNode;
@@ -12,11 +12,11 @@ type ButtonProps = {
 };
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary:
-    "bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm shadow-indigo-600/25",
+  primary: "bg-ink text-paper hover:bg-accent-ink",
   secondary:
-    "border border-slate-200 bg-white text-slate-900 hover:border-slate-300 hover:bg-slate-50",
-  ghost: "text-slate-600 hover:text-slate-900 hover:bg-slate-100",
+    "border border-ink/20 text-ink hover:border-ink/45 hover:bg-ink/[0.04]",
+  ghost: "text-ink-soft hover:text-ink",
+  invert: "bg-paper text-ink hover:bg-white",
 };
 
 export function Button({
@@ -27,7 +27,7 @@ export function Button({
   className = "",
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200";
+    "inline-flex items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-medium tracking-tight transition-all duration-200 ease-out";
 
   const combinedClassName = `${baseStyles} ${variantStyles[variant]} ${className}`;
 

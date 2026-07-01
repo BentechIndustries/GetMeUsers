@@ -5,111 +5,73 @@ import { PROOF } from "@/lib/constants";
 
 const flow = PROOF.flows[0];
 
-const stepCardHover =
-  "relative transition-[transform,box-shadow] duration-200 ease-out hover:z-10 hover:scale-[1.04] hover:shadow-md";
-
-const stepCardBase = `w-[7.5rem] rounded-2xl border px-3 py-5 sm:w-[8.25rem] sm:py-6 ${stepCardHover}`;
-
-const stepTitleClass = "mt-3 text-sm font-semibold leading-snug";
-
 export function Proof() {
   return (
-    <Section id="proof" className="bg-slate-50">
-      <SectionHeader title={PROOF.title} subtitle={PROOF.subtitle} />
+    <Section id="proof">
+      <div className="grid grid-cols-1 gap-12 md:grid-cols-12 md:items-center md:gap-10">
+        <div className="md:col-span-7">
+          <SectionHeader
+            eyebrow="04 / A worked example"
+            title={PROOF.title}
+            subtitle={PROOF.subtitle}
+          />
 
-      <div className="mb-8 flex justify-center md:mb-10">
-        <BeforeAfterVisual />
+          <div className="mt-8 flex items-center gap-3">
+            <span className="bg-ink px-3 py-1 text-sm font-medium text-paper">
+              {flow.product}
+            </span>
+            <span className="eyebrow text-ink-soft">{flow.audience}</span>
+          </div>
+
+          <p className="mt-6 max-w-xl text-xl leading-relaxed text-ink">
+            {flow.insight}
+          </p>
+        </div>
+
+        <div className="md:col-span-5">
+          <BeforeAfterVisual />
+        </div>
       </div>
 
-      <article className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
-        <div className="flex items-center gap-3">
-          <span className="rounded-full bg-indigo-600 px-3 py-1 text-sm font-semibold text-white">
-            {flow.product}
+      <div className="mt-14 flex flex-wrap items-stretch gap-x-1 gap-y-4">
+        {flow.stages.map((stage, index) => (
+          <Fragment key={stage.label}>
+            <div className="flex w-[7.5rem] flex-col border border-ink/15 bg-paper px-4 py-5 sm:w-[8.5rem]">
+              <span className="font-display text-2xl leading-none text-ink-soft">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <h3 className="mt-3 text-sm font-medium leading-snug text-ink">
+                {stage.label}
+              </h3>
+            </div>
+            <Connector />
+          </Fragment>
+        ))}
+
+        <div className="flex w-[7.5rem] flex-col border border-accent/40 bg-accent/[0.06] px-4 py-5 sm:w-[8.5rem]">
+          <span className="font-display text-2xl leading-none text-accent">
+            &#10003;
           </span>
-          <span className="text-sm font-medium text-slate-500">
-            {flow.audience}
-          </span>
+          <h3 className="mt-3 text-sm font-medium leading-snug text-accent-ink">
+            {flow.outcome}
+          </h3>
         </div>
+      </div>
 
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-slate-700">
-          {flow.insight}
-        </p>
-
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-1 gap-y-4">
-          {flow.stages.map((stage, index) => {
-            const style = getStageStyle(index, flow.stages.length);
-
-            return (
-              <Fragment key={stage.label}>
-                <div className={`${stepCardBase} ${style.card}`}>
-                  <span
-                    className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold ring-1 ${style.badge}`}
-                  >
-                    {index + 1}
-                  </span>
-                  <h3 className={`${stepTitleClass} ${style.title}`}>
-                    {stage.label}
-                  </h3>
-                </div>
-                <Connector />
-              </Fragment>
-            );
-          })}
-
-          <div
-            className={`${stepCardBase} border-indigo-300 bg-gradient-to-br from-indigo-50 via-indigo-100 to-indigo-200`}
-          >
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600 text-sm font-bold text-white">
-              ✓
-            </span>
-            <h3 className={`${stepTitleClass} text-indigo-900`}>
-              {flow.outcome}
-            </h3>
-          </div>
-        </div>
-      </article>
+      <p className="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft">
+        {flow.loop}
+      </p>
     </Section>
   );
 }
 
-function getStageStyle(index: number, total: number) {
-  const progress = total > 1 ? index / (total - 1) : 1;
-
-  if (progress <= 0) {
-    return {
-      card: "border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100",
-      badge: "bg-white text-indigo-600 ring-slate-200",
-      title: "text-slate-900",
-    };
-  }
-
-  if (progress <= 0.34) {
-    return {
-      card: "border-slate-200 bg-gradient-to-br from-slate-50 via-slate-50 to-indigo-50/60",
-      badge: "bg-white text-indigo-600 ring-indigo-100",
-      title: "text-slate-900",
-    };
-  }
-
-  if (progress <= 0.67) {
-    return {
-      card: "border-indigo-100 bg-gradient-to-br from-indigo-50/40 to-indigo-50/80",
-      badge: "bg-indigo-50 text-indigo-700 ring-indigo-200",
-      title: "text-slate-900",
-    };
-  }
-
-  return {
-    card: "border-indigo-100 bg-gradient-to-br from-indigo-50/40 to-indigo-50",
-    badge: "bg-indigo-50 text-indigo-700 ring-indigo-200",
-    title: "text-slate-900",
-  };
-}
-
 function Connector() {
   return (
-    <div aria-hidden className="flex shrink-0 items-center justify-center px-0.5 text-slate-500">
-      <span className="text-base">→</span>
+    <div
+      aria-hidden
+      className="flex shrink-0 items-center justify-center px-0.5 text-ink-soft"
+    >
+      <span className="text-base">&#8594;</span>
     </div>
   );
 }

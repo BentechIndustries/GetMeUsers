@@ -1,37 +1,40 @@
 import { Section, SectionHeader } from "@/components/ui/Section";
-import { SolutionVisual } from "@/components/SolutionVisual";
 import { SOLUTION } from "@/lib/constants";
 
 export function Solution() {
   return (
-    <Section>
-      <SectionHeader title={SOLUTION.title} className="mb-4 md:mb-5" />
-
-      <div className="mb-10 grid items-center gap-8 md:mb-12 md:grid-cols-2 md:gap-12">
-        <p className="text-xl font-medium leading-snug text-slate-900 md:text-2xl">
+    <Section className="bg-paper-alt">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-end">
+        <SectionHeader
+          eyebrow="03 / What you get"
+          title={SOLUTION.title}
+          className="md:col-span-7"
+        />
+        <p className="text-lg leading-relaxed text-ink-soft md:col-span-5">
           {SOLUTION.intro}
         </p>
-
-        <div className="flex justify-center md:justify-end">
-          <SolutionVisual />
-        </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
-        {SOLUTION.items.map((item) => (
+      <div className="mt-14 grid grid-cols-1 border-l border-t border-ink/12 sm:grid-cols-2">
+        {SOLUTION.items.map((item, index) => (
           <div
             key={item.title}
-            className="rounded-2xl border border-slate-200 p-6"
+            className="group border-b border-r border-ink/12 p-7 transition-colors hover:bg-paper md:p-9"
           >
-            <h3 className="font-semibold text-slate-900">{item.title}</h3>
-            <p className="mt-2 leading-relaxed text-slate-600">
+            <span className="eyebrow text-accent">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <h3 className="mt-4 font-display text-2xl leading-tight text-ink">
+              {item.title}
+            </h3>
+            <p className="mt-3 leading-relaxed text-ink-soft">
               {item.description}
             </p>
           </div>
         ))}
       </div>
 
-      <p className="mt-10 text-xl font-medium leading-snug text-slate-900 md:text-2xl">
+      <p className="mt-14 max-w-3xl font-display text-2xl italic leading-snug text-ink md:text-3xl">
         {SOLUTION.closing}
       </p>
     </Section>

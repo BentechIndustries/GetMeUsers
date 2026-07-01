@@ -1,39 +1,41 @@
 import { Button } from "@/components/ui/Button";
 import { HeroVisual } from "@/components/HeroVisual";
-import { CALENDLY_URL, HERO } from "@/lib/constants";
+import { CALENDLY_URL, HERO, SITE } from "@/lib/constants";
 
 export function Hero() {
   return (
-    <section className="hero-glow pt-32 pb-16 md:pt-40 md:pb-24">
-      <div className="mx-auto grid max-w-5xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16 md:px-8">
-        <div className="flex flex-col gap-8 text-center md:gap-10 md:text-left">
-          <div className="flex flex-col gap-1 md:gap-2">
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl md:leading-[1.1] lg:text-6xl">
-              {HERO.headline}
-            </h1>
-            <p className="text-2xl font-medium leading-snug text-slate-600 md:text-3xl md:leading-snug">
-              {HERO.subheadline}
-            </p>
+    <section className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 px-6 md:grid-cols-12 md:items-end md:gap-10 md:px-10">
+        <div className="reveal md:col-span-7">
+          <div className="mb-6 flex items-center gap-3 text-ink-soft">
+            <span className="h-2 w-2 rounded-[1px] bg-accent" />
+            <span className="eyebrow">{SITE.tagline}</span>
           </div>
 
-          <p className="text-2xl font-semibold leading-snug text-slate-900 md:text-3xl md:leading-snug">
+          <h1 className="font-display text-6xl font-normal leading-[0.98] text-ink md:text-7xl lg:text-[5.5rem]">
+            {HERO.headline}
+            <br />
+            <span className="italic text-ink-soft">{HERO.subheadline}</span>
+          </h1>
+
+          <p className="mt-8 max-w-md text-2xl leading-tight text-ink md:text-3xl">
             {HERO.descriptor}
           </p>
 
-          <div className="flex flex-col items-center gap-4 md:items-start">
-            <div className="flex w-full flex-col items-center gap-4 sm:w-auto sm:flex-row md:justify-start">
+          <div className="mt-10 flex flex-col items-start gap-4">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <Button href={CALENDLY_URL} external>
                 {HERO.primaryCta}
               </Button>
-              <Button href="#how-it-works" variant="secondary">
+              <Button href="#how-it-works" variant="ghost">
                 {HERO.secondaryCta}
               </Button>
             </div>
-            <p className="text-sm text-slate-500">{HERO.note}</p>
+            <p className="text-sm text-ink-soft">{HERO.note}</p>
           </div>
         </div>
 
-        <div className="hidden md:block">
+        <div className="reveal hidden md:col-span-5 md:block" style={{ animationDelay: "120ms" }}>
           <HeroVisual />
         </div>
       </div>
