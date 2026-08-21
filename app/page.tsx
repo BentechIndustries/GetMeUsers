@@ -8,7 +8,7 @@ import { Solution } from "@/components/Solution";
 import { Proof } from "@/components/Proof";
 import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
-import { CTA_BAND_SECONDARY } from "@/lib/constants";
+import { ImageBand } from "@/components/ImageBand";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
         <CtaBand />
         <Solution />
         <Proof />
-        <CtaBand content={CTA_BAND_SECONDARY} />
+        <ImageBand />
         <Faq />
         <FinalCta />
       </main>

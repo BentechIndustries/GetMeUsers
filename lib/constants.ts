@@ -104,7 +104,7 @@ export const STEPS = {
       step: "01",
       title: "Product audit",
       description:
-        "We get on a call with you, review your app, existing audience (none is fine), and current traction to find the fastest path to users.",
+        "We get on a call with you, review your app, any existing audience, and current traction to find the fastest path to users.",
     },
     {
       step: "02",

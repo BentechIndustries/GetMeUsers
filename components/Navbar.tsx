@@ -8,13 +8,13 @@ export function Navbar() {
     <header className="fixed top-0 z-50 w-full border-b border-ink/10 bg-paper/80 backdrop-blur-md">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3.5 md:px-10">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-md bg-ink">
+          <span className="flex h-9 w-9 items-center justify-center">
             <Image
               src="/logo.png"
               alt=""
               width={36}
               height={36}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
               priority
             />
           </span>

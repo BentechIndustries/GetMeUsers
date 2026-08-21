@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { Reveal } from "@/components/ui/Reveal";
 
 type SectionProps = {
   id?: string;
@@ -17,9 +18,9 @@ export function Section({
 }: SectionProps) {
   return (
     <section id={id} className={`${py} ${className}`}>
-      <div className={`mx-auto max-w-6xl px-6 md:px-10 ${containerClassName}`}>
+      <Reveal className={`mx-auto max-w-6xl px-6 md:px-10 ${containerClassName}`}>
         {children}
-      </div>
+      </Reveal>
     </section>
   );
 }

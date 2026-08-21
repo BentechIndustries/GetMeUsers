@@ -90,7 +90,7 @@ export function BeforeAfterVisual() {
         <text
           x="254"
           y="52"
-          fill="#d61f7a"
+          fill="#2563eb"
           fontSize="9"
           fontFamily="ui-monospace, monospace"
           textAnchor="middle"
@@ -111,7 +111,7 @@ export function BeforeAfterVisual() {
               y={108 - h}
               width="8"
               height={h}
-              fill={isPeak ? "#d61f7a" : "#17130d"}
+              fill={isPeak ? "#2563eb" : "#17130d"}
               opacity={isPeak ? 1 : 0.2 + (i / 6) * 0.5}
             />
           );
@@ -125,14 +125,14 @@ export function BeforeAfterVisual() {
         {/* Loop arrow */}
         <path
           d="M220 168 C240 182, 268 182, 288 168"
-          stroke="#d61f7a"
+          stroke="#2563eb"
           strokeWidth="1.5"
           strokeLinecap="round"
           fill="none"
         />
         <path
           d="M284 164 L288 168 L284 172"
-          stroke="#d61f7a"
+          stroke="#2563eb"
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -140,7 +140,7 @@ export function BeforeAfterVisual() {
         <text
           x="254"
           y="186"
-          fill="#8a0f4c"
+          fill="#1e3a8a"
           fontSize="8"
           fontFamily="system-ui, sans-serif"
           textAnchor="middle"

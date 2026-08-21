@@ -3,8 +3,8 @@
 /*
   GetMeUsers design system.
   Deliberately avoids the generic AI-template look: warm paper instead of pure
-  white, near-black warm ink, a single magenta spark drawn from the logo, an
-  editorial serif for display type, and squared containers with hairline rules.
+  white, near-black warm ink, a single blue accent, an editorial serif for
+  display type, and squared containers with hairline rules.
 */
 
 @theme {
@@ -12,8 +12,8 @@
   --color-paper-alt: #ebe4d6;
   --color-ink: #17130d;
   --color-ink-soft: #6a6255;
-  --color-accent: #d61f7a;
-  --color-accent-ink: #8a0f4c;
+  --color-accent: #2563eb;
+  --color-accent-ink: #1e3a8a;
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-geist-sans);
@@ -77,6 +77,26 @@ body::after {
 
 @keyframes reveal {
   to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Scroll reveal, driven by IntersectionObserver via the Reveal component. */
+.reveal-up {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-up.is-visible {
     opacity: 1;
     transform: none;
   }
